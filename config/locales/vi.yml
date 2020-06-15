@@ -6,6 +6,7 @@ vi:
     user: "Người dùng"
     manage_job: "Quản lí công việc"
     action: "Hành động"
+    cancel: "Trở lại"
     post:
       post: "Đăng bài"
       post_job: "Đăng công việc"
@@ -29,6 +30,7 @@ vi:
       edit_post: "Chỉnh sửa công việc"
       update_success: "Cập nhập công việc thành công!"
       update_fail: "Cập nhập công việc thất bại!"
+      manage: "Quản lý công việc"
     profile:
       show_profile: "Xem CV"
       phone: "Điện thoại"
@@ -51,8 +53,22 @@ vi:
       post_title: "Bài viết"
       approved_success: "Phê duyệt thành công!"
       approved_fail: "Phê duyệt thất bại!"
+      manage: "Quản lý ứng viên"
     view_cv: "Xem CV"
     confirm: "Xác nhận"
+    company:
+      info: "Thông tin công ty"
+      update_info: "Cập nhập thông tin"
+      update: "Cập nhập"
+      name: "Tên"
+      phone: "Số điện thoại"
+      email: "Email"
+      address: "Địa chỉ"
+      description: "Mô tả"
+      create_at: "Ngày tạo"
+      update_success: "Cập nhập thông tin thành công"
+      update_fail: "Cập nhận thông tin thất bại"
+      not_found: "Không tìm thấy công ty"
   static_pages:
     home: 
       title: "Trang chủ"
@@ -63,6 +79,9 @@ vi:
     logout: "Đăng xuất"
     register: "Đăng ký"
     create_profile: "Tạo cv"
+    show_profiles: "cv của tôi"
+    edit_profile: "Chỉnh sửa"
+    delete_profile: "Xóa"
   footer:
     coppy_right: "Tìm việc làm %{year}"
   auth:
@@ -81,29 +100,67 @@ vi:
         post:
           attributes:
             title:
-              blank: "Tiêu đề không thể để trống"
+              blank: "không thể để trống"
+              too_short: "Tối thiểu 10 ký tự"
             description:
-              blank: "Mô tả không thể để trống"
+              blank: "không thể để trống"
+              too_short: "Tối thiểu 10 ký tự"
             salary:
-              blank: "Lương không được để trống"
+              blank: "không được để trống"
+              too_short: "Tối thiểu 5 ký tự"
             address:
-              blank: "Địa chỉ không được để trống"
+              blank: "không được để trống"
+              too_short: "Tối thiểu 5 ký tự"
             target_date:
-              blank: "Kiều không được để trống"
+              blank: "không được để trống"
             start_date:
-              blank: "Ngày đăng không được"
+              blank: "không được để trống"
             end_date:
-              blank: "Ngày hết hạn không được để trống"
+              blank: "không được để trống"
   notification:
     post_success: "Tạo công việc thành công!"
     post_fail: "Tạo công việc thất bại!"
     create_success: "Tạo CV thành công"
     create_fail: "Tạo CV thất bại"
+    profile_delete: "Xóa thành công"
+    delete_fail: "Xóa thất bại"
+    update_success: "Thay đổi đã được cập nhập"
+    update_fail: "Thay đổi thất bại"
   date:
     order:
       - :day
       - :month
       - :year
+    formats:
+      default: "%Y/%m/%d"
+      long: "%B %d, %Y"
+      short: "%b %d"
+    abbr_day_names:
+    - CN
+    - Thứ 2
+    - Thứ 3
+    - Thứ 4
+    - Thứ 5
+    - Thứ 6
+    - Thứ 7
+    abbr_month_names:
+    - Thg 1
+    - Thg 2
+    - Thg 3
+    - Thg 4
+    - Thg 5
+    - Thg 6
+    - Thg 7
+    - Thg 8
+    - Thg 9
+    - Thg 10
+    - Thg 11
+    - Thg 12
+  time:
+    formats:
+      default: "%Y/%m/%d"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
   signup: "Tạo CV"
   cv:
     education: "Học vấn"
@@ -118,3 +175,6 @@ vi:
     phone: "Số điện thoại"
     remove: "Xóa"
     point: "Điểm"
+  confirmed: "Bạn chắc chắn chứ?"
+  public: "Công khai"
+  private: "Riêng tư"

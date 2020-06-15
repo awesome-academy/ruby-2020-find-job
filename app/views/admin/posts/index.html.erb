@@ -1,16 +1,31 @@
 <%= provide :title, t("admin.action") %>
-<%= render "shared/notice_messages" %>
-<table id="example" class="table table-striped table-bordered">
-  <thead>
-    <th>#</th>
-    <th><%= t "admin.post.category" %></th>
-    <th><%= t "admin.post.title" %></th>
-    <th><%= t "admin.post.salary" %></th>
-    <th><%= t "admin.post.start_date" %></th>
-    <th><%= t "admin.post.end_date" %></th>
-    <th><%= t "admin.action" %></th>
-  </thead>
-  <tbody>
-    <%= render @posts %>
-  </tbody>
-</table>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title"><%= t "admin.post.list_all_job" %></h3>
+          <%= link_to new_admin_post_path, class: "btn btn-primary btn-sm float-right" do %>
+            <%= t "admin.post.post" %>
+          <% end %>
+        </div>
+        <div class="card-body">
+          <table id="example" class="table table-striped table-bordered">
+            <thead>
+              <th>#</th>
+              <th><%= t "admin.post.category" %></th>
+              <th class="title-post"><%= t "admin.post.title" %></th>
+              <th><%= t "admin.post.salary" %></th>
+              <th><%= t "admin.post.start_date" %></th>
+              <th><%= t "admin.post.end_date" %></th>
+              <th><%= t "admin.action" %></th>
+            </thead>
+            <tbody>
+              <%= render @posts %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -8,7 +8,6 @@ class Post < ApplicationRecord
 
   accepts_nested_attributes_for :skills, allow_destroy: true
 
-  scope :by_created_at, ->{order created_at: :desc}
   enum target_type: {freelance: 0, parttime: 1, fulltime: 2}
 
   validates :title, presence: true, length: {minimum: Settings.validation.title_min, maximum: Settings.validation.title_max}

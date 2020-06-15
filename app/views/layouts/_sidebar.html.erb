@@ -15,13 +15,25 @@
     <nav class="mt-2">
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         <li class="nav-item">
-          <%= link_to "#", class: "nav-link" do %>
-            <i class="nav-icon fas fa-tachometer-alt"></i>
-            <p><%= t "admin.dashboard" %></p>
+          <%= link_to admin_companies_path, class: "nav-link" do %>
+            <i class="fas fa-info"></i>
+            <p><%= t "admin.company.info" %></p>
           <% end %>
         </li>
         <li class="nav-item">
-          <%= link_to t("user.logout"), logout_path, method: :delete, class: "nav-link" %>
+          <%= link_to admin_posts_path, class: "nav-link" do %>
+            <i class="fas fa-briefcase"></i> <%= t "admin.post.manage" %>
+          <% end %>
+        </li>
+        <li class="nav-item">
+          <%= link_to admin_user_applies_path, class: "nav-link" do %>
+            <i class="fas fa-users"></i> <%= t "admin.apply.manage" %>
+          <% end %>
+        </li>
+        <li class="nav-item">
+          <%= link_to logout_path, method: :delete, class: "nav-link" do %>
+            <i class="fas fa-sign-out-alt"></i> <%= t "user.logout" %>
+          <% end %>
         </li>
       </ul>
     </nav>

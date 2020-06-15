@@ -6,9 +6,11 @@ Rails.application.routes.draw do
     post "/login", to: "sessions#create"
     delete "/logout", to: "sessions#destroy"
 
-    resources :user do
+    resources :users do
       member do
-        resources :profile, only: %i(new create)
+        resources :profiles, except: :index do
+        patch "public", to: "profiles#change_status"
+        end 
       end
     end
 
@@ -19,6 +21,7 @@ Rails.application.routes.draw do
       resources :users, only: %i(show)
       resources :profiles, only: %i(show)
       resources :user_applies, only: %i(index update)
+      resources :companies, only: %i(index edit update)
     end
   end
 end

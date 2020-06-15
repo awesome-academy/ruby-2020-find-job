@@ -1,0 +1,45 @@
+<%= provide :title, t("admin.company.info") %>
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title"><%= t "admin.company.info" %></h3>
+        </div>
+        <div class="card-body table-responsive p-0">
+          <table class="table table-borderless">
+            <tbody>
+              <tr>
+                <td><%= t "admin.company.name" %></td>
+                <td><%= @company.name %></td>
+              </tr>
+              <tr>
+                <td><%= t "admin.company.email" %></td>
+                <td><%= @company.email %></td>
+              </tr>
+              <tr>
+                <td><%= t "admin.company.phone" %></td>
+                <td><%= @company.phone %></td>
+              </tr>
+              <tr>
+                <td><%= t "admin.company.address" %></td>
+                <td><%= @company.address %></td>
+              </tr>
+              <tr>
+                <td><%= t "admin.company.description" %></td>
+                <td><%= @company.description %></td>
+              </tr>
+              <tr>
+                <td><%= t "admin.company.create_at" %></td>
+                <td><%= @company.created_at %></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="float-right">
+        <%= link_to t("admin.company.update_info"), edit_admin_company_path(@company), class: "btn btn-primary btn-sm" %>
+      </div>
+    </div>
+  </div>
+</div>

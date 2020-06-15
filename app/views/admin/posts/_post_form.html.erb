@@ -6,7 +6,7 @@
         <%= f.label :category do %>
           <%= t "admin.post.category" %> <span class="text-danger">*</span>
         <% end %><br>
-        <%= f.select("category_id", get_category) %>
+        <%= f.select("category_id", get_category, {}, {class: "form-control"}) %>
       </div>
       <div class="form-group">
         <%= f.label :address do %>
@@ -88,6 +88,7 @@
     </div>
     <div class="col-md-12">
       <div class="form-group text-center">
+        <%= link_to t("admin.cancel"), admin_posts_path, class: "btn btn-danger" %>
         <%= f.submit t("admin.post.post_job"), class: "btn btn-primary" %>
       </div>
     </div>

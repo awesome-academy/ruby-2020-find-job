@@ -32,6 +32,9 @@
                         <%= link_to t("user.create_profile"), new_profile_path(id: current_user.id) %>
                       </li>
                       <li>
+                        <%= link_to t("user.show_profiles"), user_path(id: current_user.id) %>
+                      </li>
+                      <li>
                         <%= link_to t("user.logout"), logout_path, method: :delete %>
                       </li>
                     </ul>

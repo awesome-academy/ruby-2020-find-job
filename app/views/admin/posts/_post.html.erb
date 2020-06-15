@@ -6,7 +6,11 @@
   <td><%= post.start_date %></td>
   <td><%= post.end_date %></td>
   <td>
-    <%= link_to t("admin.post.delete"), [:admin, post], method: :delete, class: "btn btn-danger btn-sm" %>
-    <%= link_to t("admin.post.edit"), edit_admin_post_path(post), class: "btn btn-primary btn-sm" %>
+    <%= link_to [:admin, post], method: :delete, class: "btn btn-danger btn-sm" do %>
+      <i class="fas fa-trash-alt"></i>
+    <% end %>
+    <%= link_to edit_admin_post_path(post), class: "btn btn-primary btn-sm" do %>
+      <i class="fas fa-edit"></i>
+    <% end %>
   </td>
 </tr>

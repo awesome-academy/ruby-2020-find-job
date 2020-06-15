@@ -10,9 +10,13 @@
     </span>
   </td>
   <td>
-    <%= link_to t("admin.view_cv"), admin_user_path(user_apply), class: "btn btn-info btn-sm" %>
+    <%= link_to admin_user_path(user_apply.user_id), class: "btn btn-info btn-sm" do %>
+      <i class="fas fa-eye"></i>
+    <% end %>
     <% if user_apply.pending? %>
-      <%= link_to t("admin.confirm"), [:admin, user_apply], method: :patch, class: "btn btn-primary btn-sm" %>
+      <%= link_to [:admin, user_apply], method: :patch, class: "btn btn-primary btn-sm" do %>
+        <i class="fas fa-check"></i>
+      <% end %>
     <% end %>
   </td>
 </tr>

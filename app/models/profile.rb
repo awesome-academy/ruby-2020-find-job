@@ -1,8 +1,8 @@
 class Profile < ApplicationRecord
   PROFILE_PERMIT = [:position, :address, :email, :phone, :education, :avatar,
-                    qualifications_attributes:[:title, :content, :start_time, :end_time, :_destroy], 
-                    experiences_attributes:[:title, :description, :_destroy],
-                    profile_skills:[:name, :point, :_destroy]].freeze
+                    qualifications_attributes: [:title, :content, :start_time, :end_time, :_destroy], 
+                    experiences_attributes: [:title, :description, :_destroy],
+                    profile_skills_attributes: [:name, :point, :_destroy]].freeze
   VALID_EMAIL_REGEX = Settings.email_regex
 
   belongs_to :user
@@ -23,4 +23,8 @@ class Profile < ApplicationRecord
   validates :address, presence: true, length: {maximum: Settings.profile.address_length}
 
   accepts_nested_attributes_for :qualifications, :experiences, :profile_skills, allow_destroy: true
+
+  def time
+    [I18n.l(created_at), I18n.l(updated_at)].join(" - ")
+  end
 end

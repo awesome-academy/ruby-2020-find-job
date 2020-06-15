@@ -3,6 +3,7 @@ role:
   user: 1
   admin: 2
 job_per_page: 10
+profile_per_page: 10
 image_link: "https://loremflickr.com/g/300/300/logo,company/all"
 validation:
   title_min: 10
@@ -12,6 +13,7 @@ validation:
   salary_min: 5
   address_min: 5
   address_max: 255
+VALID_EMAIL_REGEX: !ruby/regexp /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 type:
   part_time: 1
   full_time: 2

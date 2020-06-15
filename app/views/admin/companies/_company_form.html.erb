@@ -1,0 +1,48 @@
+<%= form_for [:admin, @company] do |f| %>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <%= f.label :name do %>
+            <%= t "admin.company.name" %> <span class="text-danger">*</span>
+          <% end %>
+          <%= f.text_field :name, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :phone do %>
+            <%= t "admin.company.phone" %> <span class="text-danger">*</span>
+          <% end %>
+          <%= f.number_field :phone, class: "form-control" %>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <%= f.label :email do %>
+            <%= t "admin.company.email" %> <span class="text-danger">*</span>
+          <% end %>
+          <%= f.email_field :email, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :address do %>
+            <%= t "admin.company.address" %> <span class="text-danger">*</span>
+          <% end %>
+          <%= f.text_field :address, class: "form-control" %>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-md-12">
+        <div class="form-group">
+          <%= f.label :description do %>
+            <%= t "admin.company.description" %> <span class="text-danger">*</span>
+          <% end %>
+          <%= f.text_area :description, class: "form-control", rows: Settings.rows %>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <%= link_to t("admin.cancel"), admin_companies_path, class: "btn btn-danger" %>
+        <%= f.submit t("admin.company.update"), class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+<% end %>

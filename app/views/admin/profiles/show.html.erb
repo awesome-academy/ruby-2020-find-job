@@ -12,6 +12,9 @@
           <p class="text-muted text-center"><%= @profile.title %></p>
           <ul class="list-group list-group-unbordered mb-3">
             <li class="list-group-item">
+              <b><%= t "admin.profile.phone" %></b> <a class="float-right btn-link"><%= @profile.phone %></a>
+            </li>
+            <li class="list-group-item">
               <b><%= t "admin.profile.email" %></b> <a class="float-right btn-link"><%= @profile.email %></a>
             </li>
             <li class="list-group-item">
@@ -37,11 +40,6 @@
     </div>
     <div class="col-md-9">
       <div class="card">
-        <div class="card-header p-2">
-          <ul class="nav nav-pills">
-            <li class="nav-item nav-link active"><%= t "admin.profile.process" %></li>
-          </ul>
-        </div>
         <div class="card-body">
           <div class="tab-content">
             <div class="tab-pane active" id="timeline">
@@ -58,6 +56,8 @@
           </div>
         </div>
       </div>
+    </div>
+    <div class="col-md-12">
       <div class="float-right">
         <%= link_to t("admin.profile.cancel"), admin_user_path(id: @profile.user_id), class: "btn btn-info" %>
       </div>
