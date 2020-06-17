@@ -176,3 +176,5 @@ vi:
     remove: "Xóa"
     point: "Điểm"
   confirmed: "Bạn chắc chắn chứ?"
+  public: "Công khai"
+  private: "Riêng tư"

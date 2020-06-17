@@ -1,32 +1,36 @@
 <li>
-          <div class="listWrpService featured-wrap">
-            <div class="row">
-              <div class="col-md-2 col-sm-3 col-xs-3">
-                <div class="listImg">
-                  <%= image_tag profile.image if profile.image.attached? %>
-                </div>
-              </div>
-              <div class="col-md-10 col-sm-9 col-xs-9">
-              
-              <div class="row">
-              <div class="col-md-8">
-                <h3><%= link_to current_user.username, "#" %></h3>
-                <p><%= profile.position %></p>
-                <ul class="featureInfo innerfeat">
-                  <li><i class="fa fa-map-marker" aria-hidden="true"></i><%= profile.address %></li>
-                  <li><i class="fa fa-calendar" aria-hidden="true"></i><%= profile.time %></li>
-                </ul>
-                </div>
-                <div class="col-md-4">
-                <div class="click-btn apply">
-                <ul class= "featureInfo">
-                  <li><%= link_to t("user.edit_profile"), edit_profile_path(profile.id) %></li>
-                  <li><%= link_to t("user.delete_profile"), profile, method: :delete, data: {confirm: t("confirmed")} %></li>
-                </ul>
-                </div>
-                </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </li>
+  <div class="listWrpService featured-wrap">
+    <div class="row">
+      <div class="col-md-2 col-sm-3 col-xs-3">
+        <div class="listImg">
+          <%= image_tag profile.image if profile.image.attached? %>
+        </div>
+      </div>
+      <div class="col-md-10 col-sm-9 col-xs-9">
+      <div class="row">
+      <div class="col-md-8">
+        <h3><%= link_to current_user.username, "#" %></h3>
+        <p><%= profile.position %></p>
+        <ul class="featureInfo innerfeat">
+          <li><i class="fa fa-map-marker" aria-hidden="true"></i><%= profile.address %></li>
+          <li><i class="fa fa-calendar" aria-hidden="true"></i><%= profile.time %></li>
+        </ul>
+        </div>
+        <div class="col-md-4">
+        <ul>
+          <li class="click-btn">
+            <% if profile.public_cv? %>
+              <%= link_to t("public"), profile_public_path(profile_id: profile.id), method: :patch %>
+            <% else %>
+              <%= link_to t("private"), profile_public_path(profile_id: profile.id), method: :patch %>
+            <% end %>
+          </li>
+          <li class="click-btn"><%= link_to t("user.edit_profile"), edit_profile_path(profile.id)  %></li>
+          <li class="click-btn"><%= link_to t("user.delete_profile"), profile, method: :delete, data: {confirm: t("confirmed")} %></li>
+        </ul>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</li>

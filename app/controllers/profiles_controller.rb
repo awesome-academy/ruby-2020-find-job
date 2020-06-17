@@ -45,6 +45,12 @@ class ProfilesController < ApplicationController
     end 
   end
 
+  def change_status
+    @profile = current_user.profiles.find_by id: params[:profile_id]
+    @profile.public_cv? ? @profile.private_cv! : @profile.public_cv!
+    redirect_to user_path
+  end
+
   private
   
   def profile_params

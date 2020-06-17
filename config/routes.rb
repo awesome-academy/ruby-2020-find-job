@@ -8,7 +8,9 @@ Rails.application.routes.draw do
 
     resources :users do
       member do
-        resources :profiles, except: :index
+        resources :profiles, except: :index do
+        patch "public", to: "profiles#change_status"
+        end 
       end
     end
 
