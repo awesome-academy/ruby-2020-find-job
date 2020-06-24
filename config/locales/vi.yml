@@ -117,6 +117,21 @@ vi:
               blank: "không được để trống"
             end_date:
               blank: "không được để trống"
+        profile:
+          attributes:
+            education:
+              blank: "không thể để trống"
+              too_long: "Tối thiểu 250 ký tự"
+            phone:
+              blank: "không thể để trống"
+              too_long: "Tối đa 10 ký tự "
+            email:
+              blank: "không thể để trống"
+              invalid: "Chưa đúng định dạng"
+              too_long: "Tối đa 100 ký tự "
+            address:
+              blank: "không thể để trống"
+              too_long: "Tối thiểu 250 ký tự"
   notification:
     post_success: "Tạo công việc thành công!"
     post_fail: "Tạo công việc thất bại!"

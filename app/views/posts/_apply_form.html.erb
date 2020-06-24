@@ -1,7 +1,7 @@
 <div id="apply_job">
   <% if user_apply? @post %>
-    <%= render "cancel" %>
+    <%= render partial: "posts/cancel", locals: {post: @post} %>
   <% else %>
-    <%= render "apply" %>
+    <%= render partial: "posts/apply", locals: {post: @post} %>
   <% end %>
 </div>

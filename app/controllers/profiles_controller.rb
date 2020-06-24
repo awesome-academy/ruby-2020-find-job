@@ -10,6 +10,10 @@ class ProfilesController < ApplicationController
     end
   end
 
+  def show
+    @profile = Profile.find_by(id: params[:id])
+  end
+
   def edit; end
 
   def create
@@ -19,13 +23,13 @@ class ProfilesController < ApplicationController
       flash[:success] = t "notification.create_success"
       redirect_to root_url
     else
-      flash[:danger] = t "notification.creat_fail"
+      flash.now[:danger] = t "notification.create_fail"
       render :new
     end
   end
 
   def update
-    @profile.image.attach profile_params[:avatar]
+    @profile.image.attach profile_params[:avatar] if profile_params[:avatar].present?
     if @profile.update profile_params
       flash[:success] = t "notification.update_success"
       redirect_to user_path

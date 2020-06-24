@@ -3,6 +3,12 @@
 
 ul.featureInfo {
   display: flex;
+  &.innerfeat li {
+    flex: auto;
+    text-align: center;
+    align-self: center;
+    vertical-align: middle;
+  }
 }
 
 .title-post {
@@ -20,6 +26,21 @@ select {
   margin-left: 10px;
 }
 
-.time-btn{
+.time-btn {
   margin-bottom: 10px;
+}
+
+.dropdown-menu {
+  position: absolute !important;
+}
+
+body {
+  font-size: 15px;
+}
+
+.listImg img {
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+  object-position: center;
 }

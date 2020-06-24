@@ -3,17 +3,21 @@
     <div class="row">
       <div class="col-md-2 col-sm-3 col-xs-3">
         <div class="listImg">
-          <%= image_tag profile.image if profile.image.attached? %>
+          <% if profile.image.present? %>
+            <%= image_tag profile.image %>
+          <% else %>
+            <%= gravatar_image_tag(current_user.email.gsub("spam", "mdeering")) %>
+          <% end %>
         </div>
       </div>
       <div class="col-md-10 col-sm-9 col-xs-9">
         <div class="row">
           <div class="col-md-8">
-            <h3><%= link_to current_user.username, "#" %></h3>
+            <h3><%= link_to current_user.username, profile_path(profile) %></h3>
             <p><%= profile.position %></p>
             <ul class="featureInfo innerfeat">
-              <li><i class="fa fa-map-marker" aria-hidden="true"></i><%= profile.address %></li>
-              <li><i class="fa fa-calendar" aria-hidden="true"></i><%= profile.time %></li>
+              <li><i class="fas fa-map-marker-alt"></i><%= profile.address %></li>
+              <li><i class="fas fa-calendar-alt"></i><%= profile.time %></li>
             </ul>
           </div>
           <div class="col-md-4">

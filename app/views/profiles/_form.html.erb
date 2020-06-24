@@ -1,4 +1,5 @@
 <%= form_for @profile do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
   <div class="listWrpService featured-wrap candidate candetail">
     <div class="row">
       <div class="col-md-2 col-sm-3 col-xs-3">
@@ -16,16 +17,16 @@
               <%= f.text_field :position, placeholder: t("cv.position"), class: "form-control" %>
             </div>
             <div>
-              <i class="fa fa-map-marker" aria-hidden="true"></i>
+              <i class="fas fa-map-marker-alt"></i>
               <%= f.text_field :address, placeholder: t("cv.place"), class: "form-control" %>
             </div>
             <ul class="featureInfo">
               <li>
-                <i class="fa fa-calendar" aria-hidden="true"></i> 
+                <i class="far fa-envelope"></i>
                 <%= f.text_field :email, placeholder: t("cv.email"), class: "form-control" %> 
               </li>
               <li>
-                <i class="fa fa-calendar" aria-hidden="true"></i> 
+                <i class="fas fa-phone"></i>
                 <%= f.text_field :phone, placeholder: t("cv.phone"), class: "form-control" %> 
               </li>
             </ul>  
@@ -44,9 +45,6 @@
       <%= f.fields_for :qualifications do |qualification| %>
         <%= render "qualification_fields", f: qualification %>
       <% end %>
-    <div class="links">
-      <%= link_to_add_association t("cv.add"), f, :qualifications %>
-    </div>
   </div>
   <div class="listWrpService featured-wrap candidate candetail">
     <h2><%= t "cv.experience" %></h2>
@@ -61,12 +59,9 @@
   </div>
   <div class="listWrpService featured-wrap candidate candetail profile_skills">
     <h2><%= t "cv.skill" %></h2>
-    <%= fields_for :profile_skills do |profile_skill| %>
+    <%= f.fields_for :profile_skills do |profile_skill| %>
       <%= render "profile_skill_fields", f: profile_skill %>
     <% end %>
-    <div class="links">
-      <%= link_to_add_association t("cv.add"), f, :profile_skills %>
-    </div>
   </div>
   <%= f.submit t("signup"), class: "btn btn-primary" %>
 <% end %>
