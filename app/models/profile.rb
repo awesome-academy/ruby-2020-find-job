@@ -1,8 +1,8 @@
 class Profile < ApplicationRecord
   PROFILE_PERMIT = [:position, :address, :email, :phone, :education, :avatar,
-                    qualifications_attributes: [:title, :content, :start_time, :end_time, :_destroy], 
-                    experiences_attributes: [:title, :description, :_destroy],
-                    profile_skills_attributes: [:name, :point, :_destroy]].freeze
+                    qualifications_attributes: [:id, :profile_id, :title, :content, :start_time, :end_time, :_destroy], 
+                    experiences_attributes: [:id, :profile_id, :title, :description, :_destroy],
+                    profile_skills_attributes: [:id, :profile_id, :name, :point, :_destroy]].freeze
   VALID_EMAIL_REGEX = Settings.email_regex
 
   belongs_to :user

@@ -1,0 +1,59 @@
+<div class="inner-content loginWrp resumeWrp">
+  <div class="container"> 
+    <div class="row">
+      <div class="col-md-9 col-sm-8">
+        <div class="listWrpService featured-wrap candidate candetail">
+          <div class="row">
+            <div class="col-md-2 col-sm-3 col-xs-3">
+              <div class="listImg">
+                <% if @profile.image.present? %>
+                  <%= image_tag @profile.image %>
+                <% else %>
+                  <%= gravatar_image_tag(current_user.email.gsub("spam", "mdeering")) %>
+                <% end %>
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-9 col-xs-9">
+              <div class="row">
+                <div class="col-md-8">
+                  <h3><%= link_to @profile.user.username %></h3>
+                  <div class="designation"><%= @profile.position %></div>
+                  <ul class="featureInfo">
+                    <li><i class="fas fa-map-marker-alt"></i> <%= @profile.address%></li>
+                    <li><i class="far fa-envelope"></i> <%= link_to @profile.email, "mailto: #{@profile.email}" %> </li>
+                    <li><i class="fas fa-phone"></i> <%= link_to @profile.phone, "tel: #{@profile.phone}" %></li>
+                  </ul>
+                  
+                  
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="listWrpService featured-wrap candidate candetail">
+          <h2><%= t "cv.education" %></h2>
+          <p><%= @profile.education %></p>
+        </div>
+        <div class="listWrpService featured-wrap candidate candetail">
+          <% if @profile.qualifications.present? %>
+            <h2><%= t "cv.qualification" %></h2>
+            <%= render @profile.qualifications  %>
+          <% end %>
+        </div>
+        <div class="listWrpService featured-wrap candidate candetail">
+          <% if @profile.experiences.present? %>
+            <h2><%= t "admin.profile.experience" %></h2>
+            <%= render @profile.experiences  %>
+          <% end %>
+        </div>
+        <div class="listWrpService featured-wrap candidate candetail">
+          <% if @profile.profile_skills.present? %>
+            <h2><%= t "cv.skill" %></h2>
+            <%= render @profile.profile_skills  %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,1 +1,1 @@
-  $('#apply_job').html('<%= j render "posts/cancel" %>');
+  $('#apply_job').html('<%= j render partial: "posts/cancel", locals: {post: @post} %>');
