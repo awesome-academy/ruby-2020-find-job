@@ -139,6 +139,8 @@ vi:
               too_long: "Tối thiểu 250 ký tự"
             title:
               blank: "không thể để trống"
+            user: 
+              required: "Phải có người dùng"
         user:
           attributes:
             email:

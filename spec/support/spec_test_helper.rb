@@ -1,5 +1,6 @@
 module SpecTestHelper
   def login user
-    request.session[:user_id] = user.id
-  end
+    @request.env["devise.mapping"] = Devise.mappings[:user]
+    sign_in user
+   end
 end

@@ -15,7 +15,7 @@
                   <li><i class="fa fa-map-marker" aria-hidden="true"></i><%= @post.address %></li>
                   <li><i class="fa fa-calendar" aria-hidden="true"></i><%= @post.apply_time %></li>
                 </ul>
-                <div class="time-btn"><%= @post.target_type %></div>
+                <div class="time-btn"><%= applied_post_status(@post) %></div>
                 <%= render "apply_form" if user_signed_in? %>
               </div>
             </div>

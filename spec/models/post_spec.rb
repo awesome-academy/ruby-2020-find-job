@@ -33,4 +33,8 @@ RSpec.describe Post, type: :model do
   describe "#apply_time" do
     it {expect(subject.apply_time).to eq([subject.start_date, subject.end_date].join(" - "))}
   end
+
+  describe ".post_listed" do
+    it {expect(Post.post_listed([1,2,3])).to eq(Post.where(id: [1,2,3])) }
+  end
 end
