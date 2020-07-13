@@ -64,20 +64,16 @@ class ProfilesController < ApplicationController
 
   def correct_user
     @profile = current_user.profiles.find_by id: params[:id]
+    
+    flash[:danger] = t "admin.profile.profile_not_found"
     redirect_to root_url unless @profile
   end
 
   def check_valid_profile_applied
     @profile_applied = current_user.user_applies.find_by profile_id: params[:id]
-
-    if @profile_applied.nil?
-      flash[:danger] = t "admin.profile.user_not_found"
-      redirect_to root_url
-    else
-      return if @profile_applied.pending? 
+    return if @profile_applied.nil? || @profile_applied.pending? 
       
-      flash[:danger] = t "cv.cv_approved"
-      redirect_to user_path
-    end
+    flash[:danger] = t "cv.cv_approved"
+    redirect_to user_path
   end
 end
