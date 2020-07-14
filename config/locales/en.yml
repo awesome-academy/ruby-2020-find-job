@@ -255,3 +255,8 @@ en:
     subject: "Candidate announcement"
     approved_job: "Your CV has been approved"
     cancel_job: "Your CV is not accepted"
+  search:
+    search_suggest: "Search suggestions"
+  profile_notfound: "No candidates match your request!"
+  job_position: "Job position"
+  find_candidate: "Find candidates"

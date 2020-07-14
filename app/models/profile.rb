@@ -25,6 +25,9 @@ class Profile < ApplicationRecord
   validates :address, presence: true, length: {maximum: Settings.profile.address_length}
 
   accepts_nested_attributes_for :qualifications, :experiences, :profile_skills, allow_destroy: true
+  
+  scope :by_status, -> {where status: Profile.statuses[:public_cv]}
+  scope :by_profiles, -> by_id {where(["user_id IN (?) and status = ?", by_id, Profile.statuses[:public_cv]])}
 
   def time
     [I18n.l(created_at), I18n.l(updated_at)].join(" - ")

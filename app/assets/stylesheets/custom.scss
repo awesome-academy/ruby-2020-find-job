@@ -8,3 +8,14 @@
 #example_paginate {
   float: right;
 }
+
+thead tr th {
+  white-space: nowrap;
+  text-overflow: clip;
+}
+
+.alert-primary {
+  color: #004085;
+  background-color: #cce5ff;
+  border-color: #b8daff;
+}

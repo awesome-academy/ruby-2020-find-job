@@ -1,0 +1,22 @@
+<%= search_form_for @q, url: admin_profiles_path do |f| %>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= f.search_field :title_cont, class: "form-control", placeholder: t("job_position") %>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="form-group">
+        <%= f.search_field :address_cont, class: "form-control", placeholder: t("admin.post.address") %>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="form-group">
+        <%= f.search_field :profile_skills_name_cont, class: "form-control", placeholder: t("admin.post.skill") %>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <%= f.submit t("admin.search"), class: "btn btn-info btn-block" %>
+    </div>
+  </div>
+<% end %>

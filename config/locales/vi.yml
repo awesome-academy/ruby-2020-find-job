@@ -271,3 +271,8 @@ vi:
     subject: "Thông báo ứng viên"
     approved_job: "CV của bạn đã được chấp thuận"
     cancel_job: "CV của bạn không được chấp nhận"
+  search:
+    search_suggest: "Gợi ý tìm kiếm"
+  profile_notfound: "Không có ứng viên phù hợp với yêu cầu của bạn!"
+  job_position: "Vị trí công việc"
+  find_candidate: "Tìm ứng viên"

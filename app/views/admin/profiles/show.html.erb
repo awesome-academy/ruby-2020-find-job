@@ -60,9 +60,9 @@
                   </div>
                 </div>
                 <div>
-                  <i class="fas fa-briefcase"></i>
+                  <i class="fas fa-laptop-code"></i>
                   <div class="timeline-item">
-                    <h3 class="timeline-header"><%= t "admin.profile.experience" %></h3>
+                    <h3 class="timeline-header"><%= t "cv.qualification" %></h3>
                     <%= render partial: "qualification", collection: @qualifications %>
                   </div>
                 </div>
@@ -74,7 +74,7 @@
     </div>
     <div class="col-md-12">
       <div class="float-right">
-        <%= link_to t("admin.profile.cancel"), admin_user_path(id: @profile.user_id), class: "btn btn-info" %>
+        <%= link_to t("admin.profile.cancel"), admin_profiles_path, class: "btn btn-info" %>
       </div>
     </div>
   </div>

@@ -30,6 +30,7 @@ gem "ransack"
 gem "cancancan"
 gem "sidekiq"
 gem "figaro"
+gem "bootstrap4-kaminari-views"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

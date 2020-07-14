@@ -1,0 +1,33 @@
+<%= provide :title, t("admin.profile.show_profile") %>
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-body">
+        <%= render "search" %>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12">
+    <h3><%= t "search.search_suggest" %></h3>
+    <% if @profiles.blank? %>
+      <div class="alert alert-primary" role="alert">
+        <%= t "profile_notfound" %>
+      </div>
+    <% else %>
+      <div class="card card-solid">
+        <div class="card-body pb-0">
+          <div class="row d-flex align-items-stretch">
+            <%= render @profiles %>
+          </div>
+        </div>
+        <div class="card-footer">
+          <nav aria-label="Contacts Page Navigation">
+            <ul class="pagination justify-content-center m-0">
+              <%= paginate @profiles, theme: "twitter-bootstrap-4" %>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
