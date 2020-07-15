@@ -17,6 +17,8 @@
                  <%= f.label :password, t("auth.password"), class: "input-group-addon" %>
                 <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
               </div>
+              <div><%= render "users/shared/links" %></div>
+
               <div class="sub-btn">
                 <%= f.submit t("user.login"), class: "sbutn" %>
               </div>
