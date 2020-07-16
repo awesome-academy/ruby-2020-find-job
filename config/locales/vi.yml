@@ -87,6 +87,14 @@ vi:
     edit_profile: "Chỉnh sửa"
     delete_profile: "Xóa"
     show_job_applieds: "Công việc đã ứng tuyển"
+    forgot_your_password: "Quên mật khẩu?"
+    confirmation_instruction: "chưa nhận được hướng dẫn xác nhận?"
+    unlock_instructions: "Chưa nhận được hướng dẫn mở khóa"
+    password_instruction: "Nhận hướng dẫn đổi mật khẩu"
+    change_pw: "Thay đổi mật khẩu"
+    reset_pw: "Mật khẩu mới"
+    change_pw: "Thay đổi mật khẩu"
+    minimum_pw: "Ký tự tối thiểu %{count}"
   footer:
     coppy_right: "Tìm việc làm %{year}"
   auth:
@@ -149,6 +157,7 @@ vi:
               blank: "Không được để trống"
               invalid: "không đúng định dạng"
               taken: "đã tồn tại"
+              not_found: "không tồn tại"
             password:
               blank: "không được để trống"
               too_short: "tối thiểu 6 ký tự"
@@ -156,6 +165,8 @@ vi:
               confirmation: "xác nhận không chính xác"
             username:
               blank: "không được để trống"
+            reset_password_token:
+              invalid: "Không phù hợp"
         qualification:
           attributes:            
             start_time:
@@ -176,6 +187,10 @@ vi:
               too_long: "Tối thiểu 250 ký tự"
       messages:
         record_invalid: "Bản ghi không hợp lệ"
+  errors:
+    messages:
+      not_saved: "Chưa được lưu"
+    password_regex: "Phải có ít nhất một ký tự thường, một ký tự in hoa và một ký tự số"
   notification:
     post_success: "Tạo công việc thành công!"
     post_fail: "Tạo công việc thất bại!"
@@ -271,3 +286,15 @@ vi:
     subject: "Thông báo ứng viên"
     approved_job: "CV của bạn đã được chấp thuận"
     cancel_job: "CV của bạn không được chấp nhận"
+    hello: "Xin chào"
+    change_pw: "Có ai đó đã yêu cầu thay đổi mật khẩu. Bạn có thể thực hiện nó bằng link bên dưới."
+    ignore: "Nếu bạn không làm việc này hãy bỏ qua email này."
+    until: "Mật khẩu của bạn sẽ không thay đổi cho đến khi bạn thay đổi nó"
+  devise:
+    failure:
+      user:
+        already_authenticated: "Đã xác minh"
+    passwords:
+      user:
+        send_instructions: "Đã gửi hướng dẫn thay đổi mật khẩu đến mail của bạn"
+      change_password: "Thay đổi mật khẩu"

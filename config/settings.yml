@@ -19,6 +19,7 @@ validation:
   point_less_than: 100
   point_greater_than: 0
 VALID_EMAIL_REGEX: !ruby/regexp /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+password_regex: !ruby/regexp /^(?=.*[a-zA-Z])(?=.*[0-9])/i
 type:
   part_time: 1
   full_time: 2

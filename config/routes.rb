@@ -7,7 +7,8 @@ Rails.application.routes.draw do
 
     resources :posts, only: :show
     resources :user_applies, only: %i(create destroy)
-
+    resources :password_resets, except: %i(destroy show index)
+    
     resources :users do
       member do
         get "/job_applieds", to: "job_applieds#index"
