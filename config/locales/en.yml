@@ -267,8 +267,8 @@ en:
   devise:
     failure:
       user:
-        already_authenticated: "Đã xác minh"
+        already_authenticated: "Already authenticated"
     passwords:
       user:
-        send_instructions: "Đã gửi hướng dẫn thay đổi mật khẩu đến mail của bạn"
+        send_instructions: "Send instructions"
       change_password: "Change password"

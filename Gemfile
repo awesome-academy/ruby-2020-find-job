@@ -30,6 +30,10 @@ gem "ransack"
 gem "cancancan"
 gem "sidekiq"
 gem "figaro"
+gem "omniauth"
+gem "omniauth-google-oauth2"
+gem "omniauth-facebook"
+gem "activerecord-session_store"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

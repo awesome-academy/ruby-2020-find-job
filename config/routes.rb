@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
+  devise_for :users, controllers:{omniauth_callbacks: "users/omniauth_callbacks"}
   scope "(:locale)", locale: /en|vi/ do
     root "static_pages#home"
     
-    devise_for :users, controllers: {sessions: "users/sessions",
-      registrations: "users/registrations"}
+
 
     resources :posts, only: :show
     resources :user_applies, only: %i(create destroy)

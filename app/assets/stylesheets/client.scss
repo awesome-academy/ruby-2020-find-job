@@ -100,3 +100,20 @@ textarea{
   border-radius: 5px;
   border: 1px solid red;
 }
+
+a.social-btn {
+  display: block;
+  text-align: center;
+  font-weight: 600;
+  font-size: 18px;
+  margin-top: 10px;
+  padding: 10px;
+  color: white;
+  &.facebook {
+    background-color: royalblue;
+  }
+  
+  &.google_oauth2 {
+    background-color: indianred;
+  }
+}
