@@ -6,7 +6,7 @@ ruby "2.5.1"
 gem "active_storage_validations"
 gem "bcrypt", "3.1.11"
 gem "bootsnap", ">= 1.4.2", require: false
-gem "bootstrap-sass", "~> 3.3.6"
+gem "bootstrap-sass", "~> 3.4.1"
 gem "config"
 gem "cocoon"
 gem "faker", "2.1.2"
