@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_13_091612) do
+ActiveRecord::Schema.define(version: 2020_07_20_062826) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -107,7 +107,7 @@ ActiveRecord::Schema.define(version: 2020_07_13_091612) do
     t.string "address"
     t.string "facebook_link"
     t.string "title"
-    t.integer "status", default: 0, null: false
+    t.integer "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "position"
@@ -121,6 +121,15 @@ ActiveRecord::Schema.define(version: 2020_07_13_091612) do
     t.text "content"
     t.bigint "profile_id", null: false
     t.index ["profile_id"], name: "index_qualifications_on_profile_id"
+  end
+
+  create_table "sessions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "session_id", null: false
+    t.text "data"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["session_id"], name: "index_sessions_on_session_id", unique: true
+    t.index ["updated_at"], name: "index_sessions_on_updated_at"
   end
 
   create_table "skills", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -154,6 +163,7 @@ ActiveRecord::Schema.define(version: 2020_07_13_091612) do
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
+    t.string "uid"
   end
 
   create_table "views", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
