@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   PASSWORD_REGEX = Settings.password_regex
-  devise :database_authenticatable, :registerable, :validatable, :recoverable, :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
+  devise :database_authenticatable, :registerable, :confirmable, :async, :validatable, :recoverable, :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
   
   has_one :company, dependent: :destroy
   has_many :posts, dependent: :destroy
@@ -38,6 +38,8 @@ class User < ApplicationRecord
           user.password = password
           user.password_confirmation = password
           user.username = data.name
+          user.confirmation_sent_at = Time.zone.now
+          user.confirmed_at = Time.zone.now
         end
       end
     end

@@ -264,6 +264,9 @@ en:
     change_pw: "Someone has requested a link to change your password. You can do this through the link below."
     ignore: "If you didn't request this, please ignore this email."
     until: "Your password won't change until you access the link above and create a new one."
+    locked_email: "Your account has been locked due to an excessive number of unsuccessful sign in attempts."
+    unlock_acount: "Click the link below to unlock your account:"
+    link_unlock: "Unlock my account"  
   devise:
     failure:
       user:
