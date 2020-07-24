@@ -1,4 +1,6 @@
 class Profile < ApplicationRecord
+  acts_as_paranoid
+  
   PROFILE_PERMIT = [:position, :address, :email, :phone, :education, :avatar, :title,
                     qualifications_attributes: [:id, :title, :content, :start_time, :end_time, :_destroy], 
                     experiences_attributes: [:id, :title, :description, :_destroy],
@@ -25,7 +27,7 @@ class Profile < ApplicationRecord
   validates :address, presence: true, length: {maximum: Settings.profile.address_length}
 
   accepts_nested_attributes_for :qualifications, :experiences, :profile_skills, allow_destroy: true
-
+  
   def time
     [I18n.l(created_at), I18n.l(updated_at)].join(" - ")
   end

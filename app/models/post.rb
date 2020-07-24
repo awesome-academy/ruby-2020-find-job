@@ -1,4 +1,6 @@
 class Post < ApplicationRecord
+  acts_as_paranoid
+  
   belongs_to :category
   belongs_to :user
   has_many :skills, as: :skillable, dependent: :destroy
@@ -20,7 +22,7 @@ class Post < ApplicationRecord
   POST_PARAMS = [:category_id, :title, :description, :salary, :address,
                  :target_type, :start_date, :end_date,
                  skills_attributes: [:id, :title, :_destroy]].freeze
-
+  
   def apply_time
     [start_date, end_date].join(" - ")
   end
