@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  acts_as_paranoid
+  
   PASSWORD_REGEX = Settings.password_regex
   devise :database_authenticatable, :registerable, :confirmable, :async, :validatable, :recoverable, :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
   
@@ -13,7 +15,7 @@ class User < ApplicationRecord
 
   validates :username, presence: true, length: {maximum: Settings.validation.max_length}
   validate :password_complexity
-
+  
   enum role: {user: 1, admin: 2}
 
   class << self

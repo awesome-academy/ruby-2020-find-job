@@ -35,6 +35,7 @@ gem "omniauth-google-oauth2"
 gem "omniauth-facebook"
 gem "activerecord-session_store"
 gem "devise-async"
+gem "paranoia"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

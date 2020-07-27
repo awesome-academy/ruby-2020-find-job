@@ -1,4 +1,6 @@
 class Qualification < ApplicationRecord
+  acts_as_paranoid
+
   belongs_to :profile
 
   validate :qualification_start_time_invalid
