@@ -1,1 +1,9 @@
 <%= render "shared/notice_messages" %>
+<h2><%= t "chart.post_of_month" %></h2>
+<% if @posts.any? %>
+  <%= render "chart", posts: @posts %>
+<% end %>
+<h2><%= t "chart.cv_of_month" %></h2>
+<% if @profile_applies.any? %>
+  <%= render "profile_applies_chart", profile_applies: @profile_applies %>
+<% end %>

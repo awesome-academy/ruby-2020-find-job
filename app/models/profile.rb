@@ -15,7 +15,7 @@ class Profile < ApplicationRecord
   has_many :qualifications, dependent: :destroy
   has_many :user_apply, dependent: :destroy
 
-  delegate :username, to: :user, prefix: true
+  delegate :username, to: :user
 
   enum status: {private_cv: 0, public_cv: 1}
   has_one_attached :image

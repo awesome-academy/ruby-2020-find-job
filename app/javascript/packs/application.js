@@ -12,6 +12,8 @@ require('datatables.net-bs4')
 require('packs/datatable')
 require('cocoon')
 require('packs/custom')
+require('chartkick')
+require('chart.js')
 
 import '@fortawesome/fontawesome-free/js/all';
 import $ from 'jquery';
