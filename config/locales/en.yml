@@ -275,3 +275,6 @@ en:
       user:
         send_instructions: "Send instructions"
       change_password: "Change password"
+  chart: 
+    cv_of_month: "Cv of month"
+    post_of_month: "Post of month"

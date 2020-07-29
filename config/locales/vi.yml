@@ -298,3 +298,6 @@ vi:
       user:
         send_instructions: "Đã gửi hướng dẫn thay đổi mật khẩu đến mail của bạn"
       change_password: "Thay đổi mật khẩu"
+  chart: 
+    cv_of_month: "Số CV đã thu được trong tháng"
+    post_of_month: "Số bài viết được đăng trong tháng"

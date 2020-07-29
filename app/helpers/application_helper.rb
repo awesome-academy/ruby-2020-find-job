@@ -19,4 +19,9 @@ module ApplicationHelper
     apply_post = current_user.user_applies.find_by post_id: post
     apply_post.status_i18n if apply_post.present?
   end
+
+  def chart_group_by_day_of_month provider 
+    provider.group_by_day_of_month(:created_at).count
+  end
+  
 end
