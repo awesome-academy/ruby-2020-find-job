@@ -109,11 +109,32 @@ a.social-btn {
   margin-top: 10px;
   padding: 10px;
   color: white;
+
   &.facebook {
     background-color: royalblue;
   }
   
   &.google_oauth2 {
     background-color: indianred;
+  }
+}
+
+.notification-container{
+  .notification-title{
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+  
+  .notifications{
+    padding: 10px;
+    background-color: honeydew;
+  }
+
+  #notificationList {
+    padding: 10px;
+    
+    li{
+      font-size: 15px;
+    }
   }
 }

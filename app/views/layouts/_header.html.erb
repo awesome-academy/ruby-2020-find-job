@@ -45,7 +45,11 @@
                       </li>
                     </ul>
                 </li>
-                
+                <li class="dropdown">
+                  <%= link_to notifications_path do %>
+                    <i class="fa fa-bell" aria-hidden="true"></i>
+                  <% end %>
+                </li>
               </ul>  
             <% else %>
               <div class="login-btn"><%= link_to t("user.login"), new_user_session_path %></div>

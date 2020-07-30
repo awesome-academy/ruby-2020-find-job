@@ -13,6 +13,8 @@ class Admin::UserAppliesController < Admin::AdminsController
     else
       flash[:danger] = t "admin.apply.approved_fail"
     end
+
+    push_notification
     
     redirect_to admin_user_applies_path
   end
@@ -36,5 +38,10 @@ class Admin::UserAppliesController < Admin::AdminsController
 
     flash[:danger] = t "admin.post.not_found"
     redirect_to admin_user_applies_path
+  end
+
+  def push_notification
+    notification_service = NotificationService.new current_user, @user_apply
+    notification_service.push_notification
   end
 end
