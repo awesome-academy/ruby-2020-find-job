@@ -1,0 +1,21 @@
+<div class="inner-content loginWrp resumeWrp">
+  <div class="container"> 
+    <div class="row">
+      <div class="col-md-12 col-sm-8">
+        <ul class="notificator">
+          <div class="notification-container">
+            <div class="notification-title"><%= t "notification.title" %></div>
+            <div class="notifications">
+              <% if @notifications.any? %>      
+                <ul id="notificationList">
+                  <%= render @notifications %>
+                </ul>
+                <%= paginate @notifications %>
+              <% end %>
+            </div>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

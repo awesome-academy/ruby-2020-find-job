@@ -177,8 +177,16 @@ en:
     error: "Error"
     the_form_contains: "The form contains"
   notification:
-    post_success: "Post success!"
-    post_fail: "Post failed!"
+    title: "Notification"
+    post_success: "Create post success"
+    post_fail: "Create post fail!"
+    create_success: "Create CV success"
+    create_fail: "Create CV fail!"
+    profile_delete: "Delete success"
+    delete_fail: "Delete fail!"
+    update_success: "Change updated"
+    update_fail: "Change fail!"
+    notification_success: "Your CV has been approve %{sender}"
   date:
     order:
       - :day

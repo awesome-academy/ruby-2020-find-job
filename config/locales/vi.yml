@@ -192,6 +192,7 @@ vi:
       not_saved: "Chưa được lưu"
     password_regex: "Phải có ít nhất một ký tự thường, một ký tự in hoa và một ký tự số"
   notification:
+    title: "Thông báo"
     post_success: "Tạo công việc thành công!"
     post_fail: "Tạo công việc thất bại!"
     create_success: "Tạo CV thành công"
@@ -200,6 +201,7 @@ vi:
     delete_fail: "Xóa thất bại"
     update_success: "Thay đổi đã được cập nhập"
     update_fail: "Thay đổi thất bại"
+    notification_success: "CV của bạn đã được chấp nhận bởi %{sender}"
   date:
     order:
       - :day

@@ -23,5 +23,4 @@ module ApplicationHelper
   def chart_group_by_day_of_month provider 
     provider.group_by_day_of_month(:created_at).count
   end
-  
 end

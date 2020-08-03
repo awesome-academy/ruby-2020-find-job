@@ -1,0 +1,4 @@
+<li>
+  <span> <%= notification.created_at.strftime(Settings.date_setting) %></span>
+  <span> <%= t("notification.#{notification.data}", sender: notification.creator.company_name) %></span>
+</li>

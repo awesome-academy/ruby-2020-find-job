@@ -33,5 +33,8 @@ profile:
   address_length: 250
 image:
   accept: "image/jpg, image/jpeg, image/png"
-password_default : "123456"
+password_default : "Abc123456"
 phone_number: 0123456789
+notification_per_page: 20
+notification_data: "notification_success"
+date_setting: "%d %b. %Y"
