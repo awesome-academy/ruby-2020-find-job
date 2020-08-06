@@ -9,6 +9,6 @@ class Notification < ApplicationRecord
   private
 
   def notification_relay
-    NotificationRelayJob.perform_later(self)
+    NotificationRelayJob.perform_now(self)
   end
 end

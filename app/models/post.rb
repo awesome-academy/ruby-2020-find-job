@@ -22,7 +22,19 @@ class Post < ApplicationRecord
   POST_PARAMS = [:category_id, :title, :description, :salary, :address,
                  :target_type, :start_date, :end_date,
                  skills_attributes: [:id, :title, :_destroy]].freeze
-  
+
+  scope :search_posts, (lambda do |params|
+    ransack(address_cont: params[:address]).result
+  end)
+
+  scope :posts_start_date, (lambda do |params|
+    where(arel_table[:start_date].gteq(params[:start_date_gteq])) if params[:start_date_gteq].present?
+  end)
+
+  scope :posts_salary, (lambda do |params| 
+    where(arel_table[:salary].gteq(params[:salary_gteq])) if params[:salary_gteq].present?
+  end)
+
   def apply_time
     [start_date, end_date].join(" - ")
   end

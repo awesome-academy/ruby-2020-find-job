@@ -15,6 +15,8 @@ vi:
       start_date: "Ngày nộp CV"
       end_date: "Ngày hết hạn"
       salary: "Lương"
+      salary_max: "Lương tối đa"
+      salary_min: "Lương tối thiểu"
       title: "Tiêu đề"
       description: "Mô tả"
       target_type: "Hình thức"
@@ -192,7 +194,7 @@ vi:
       not_saved: "Chưa được lưu"
     password_regex: "Phải có ít nhất một ký tự thường, một ký tự in hoa và một ký tự số"
   notification:
-    title: "Thông báo"
+    title: "Thông báo của bạn"
     post_success: "Tạo công việc thành công!"
     post_fail: "Tạo công việc thất bại!"
     create_success: "Tạo CV thành công"
@@ -201,7 +203,7 @@ vi:
     delete_fail: "Xóa thất bại"
     update_success: "Thay đổi đã được cập nhập"
     update_fail: "Thay đổi thất bại"
-    notification_success: "CV của bạn đã được chấp nhận bởi %{sender}"
+    notification_success: "CV của bạn đã được chấp nhận bởi"
   date:
     order:
       - :day
@@ -303,3 +305,21 @@ vi:
   chart: 
     cv_of_month: "Số CV đã thu được trong tháng"
     post_of_month: "Số bài viết được đăng trong tháng"
+  datetime:
+    distance_in_words:
+      x_days:
+            one: "Một ngày trước"
+            other: "%{count} ngày trước"
+      less_than_x_minutes:
+        one: "Ít hơn một phút trước"
+        other: "Ít hơn %{count} phút trước"
+      x_minutes:
+        one: "1 phút"
+        other: "%{count} phút"
+      about_x_hours:
+        one: "Khoảng 1 giờ trước"
+        other: "Khoảng %{count} giờ trước"
+      x_hours:
+        one: " 1 giờ trước"
+        other: "%{count} giờ trước"
+  

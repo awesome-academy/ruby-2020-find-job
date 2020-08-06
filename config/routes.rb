@@ -6,15 +6,14 @@ Rails.application.routes.draw do
     devise_for :users, skip: %i(omniauth_callbacks), 
                        controllers: {
                           sessions: "users/sessions",
-                          registrations: "users/registrations",
-                          passwords: "users/passwords"}
+                          registrations: "users/registrations"}
 
     root "static_pages#home"
     resources :posts, only: :show
     resources :user_applies, only: %i(create destroy)
     resources :password_resets, except: %i(destroy show index)
     resources :notifications, only: :index
-    
+    resources :searches, only: :index
     resources :users do
       member do
         get "/job_applieds", to: "job_applieds#index"

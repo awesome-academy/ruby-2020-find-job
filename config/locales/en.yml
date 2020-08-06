@@ -16,6 +16,8 @@ en:
       end_date: "End date"
       salary: "Salary"
       title: "Title"
+      salary_max: "maximum salary"
+      salary_min: "minimum salary"
       description: "Description"
       target_type: "Target type"
       skill: "Skill"
@@ -286,3 +288,20 @@ en:
   chart: 
     cv_of_month: "Cv of month"
     post_of_month: "Post of month"
+    datetime:
+    distance_in_words:
+      x_days:
+            one: "one day ago"
+            other: "%{count} ago"
+      less_than_x_minutes:
+        one: "less than a minute"
+        other: "less than %{count} minutes"
+      x_minutes:
+        one: "1 minute"
+        other: "%{count} minutes"
+      about_x_hours:
+        one: "about 1 hour"
+        other: "about %{count} hours"
+      x_hours:
+        one: " 1 hour"
+        other: "%{count} hours"
