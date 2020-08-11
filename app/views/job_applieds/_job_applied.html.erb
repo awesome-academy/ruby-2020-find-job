@@ -1,6 +1,14 @@
 
 <tr class="row100 body">
   <td class="cell100 column1"><%= link_to post.title, post_path(post) %></td>
-  <td class="cell100 column2"><%= post.target_type_i18n %></td>
-  <td class="cell100 column3"><div><%= applied_post_status(post) %></div></td>
+  <td class="cell100 column2">
+    <span class="label label-default">
+      <%= post.target_type_i18n %>
+    </span>
+  </td>
+  <td class="cell100 column3">
+    <span class="label label-info">
+      <%= applied_post_status(post) %>
+    </span>
+  </td>
 </tr>
