@@ -1,6 +1,0 @@
-<li>
-  <span><img src="<%= notification.creator.company.logo %>" alt=""></span>
-  <span> <%= notification.created_at.strftime(Settings.date_setting) %></span>
-  <span> <%= t "notification.#{notification.data}" %>  <b><%=  notification.creator.company_name %></b></span>
-  <p><%= time_ago_in_words(notification.created_at) %></p>
-</li>

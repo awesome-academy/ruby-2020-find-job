@@ -205,6 +205,8 @@ vi:
     update_success: "Thay đổi đã được cập nhập"
     update_fail: "Thay đổi thất bại"
     notification_success: "CV của bạn đã được chấp nhận bởi"
+    view_all_notification: "xem tất cả"
+    not_viewed: "thông báo bạn chưa xem"
   date:
     order:
       - :day
@@ -306,6 +308,12 @@ vi:
   chart: 
     cv_of_month: "Số CV đã thu được trong tháng"
     post_of_month: "Số bài viết được đăng trong tháng"
+    day: "Ngày"
+    posts: "Các bài viết"
+    posts_in_day: "Tổng bài viết trong ngày"
+    no_data: "không có data"
+    profiles_in_day: "Tổng cv đã nộp"
+    profiles: "CV "
   datetime:
     distance_in_words:
       x_days:

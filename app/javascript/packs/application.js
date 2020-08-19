@@ -14,6 +14,7 @@ require('cocoon')
 require('packs/custom')
 require('chartkick')
 require('chart.js')
+// require('packs/viewed_noti.js')
 
 import '@fortawesome/fontawesome-free/js/all';
 import $ from 'jquery';

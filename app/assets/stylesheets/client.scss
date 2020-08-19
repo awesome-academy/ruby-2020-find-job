@@ -1,3 +1,5 @@
+@import 'colors';
+
 body {
   font-size: 18px !important;
 }
@@ -127,11 +129,15 @@ a.social-btn {
   .notification-title{
     font-size: 30px;
     margin-bottom: 10px;
+
+    span {
+      font-style: italic;
+      font-size: 15px;
+    }
   }
   
   .notifications{
     padding: 10px;
-    background-color: honeydew;
   }
 
   #notificationList {
@@ -172,4 +178,39 @@ input.search {
 
 .mt-10 {
   margin-top: 10px;
+}
+
+.dropdown.notifi {
+  .dropdown-menu {
+    height: 325px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    
+    li{
+      width: 370px;
+      margin: 2px;
+    }
+
+    div.view-all {
+      text-align: center;
+      position: sticky;
+      bottom: 0;
+
+      a{
+        background-color: $blue-00aeef;
+        display: block;
+        font-weight: 600;
+        padding: 5px 0;
+        color: white;
+      }
+    }
+  }
+}
+
+.viewed-false {
+  background-color: $gray-ddd;
+}
+
+.viewed-true {
+  background-color: transparent;
 }

@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     resources :posts, only: :show
     resources :user_applies, only: %i(create destroy)
     resources :password_resets, except: %i(destroy show index)
-    resources :notifications, only: :index
+    resources :notifications, only: %i(index update)
     resources :searches, only: :index
     resources :users do
       member do

@@ -1,0 +1,17 @@
+<%= link_to notification_path(notification.id), method: :put do %>
+  <li class="list-noti viewed-<%= notification.viewed %>" data-noti_id="<%= notification.id %>"
+  data-url="<%= notification_path notification.id %>">
+    <div class="row">
+      <div class="col-md-3 col-sm-3 col-xs-3">
+        <div class="notify-img">
+          <%= image_tag notification.creator.company_logo %>
+        </div>
+      </div>
+      <div class="col-md-9 col-sm-9 col-xs-9 pd-l0">
+        <%= notification.created_at.strftime Settings.date_setting %></span>
+        <span> <%= t "notification.#{notification.data}" %>  <b><%=  notification.creator.company_name %></b></span>
+        <p><%= time_ago_in_words notification.created_at %></p>
+      </div>
+    </div>
+  </li>
+<% end %>
