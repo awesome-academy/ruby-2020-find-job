@@ -6,9 +6,11 @@ class Notification < ApplicationRecord
 
   validates :creator_id, :receiver_id, :data, presence: true
 
+  scope :not_view, -> {where viewed: false}
+
   private
 
   def notification_relay
-    NotificationRelayJob.perform_now(self)
+    NotificationRelayJob.perform_now self
   end
 end

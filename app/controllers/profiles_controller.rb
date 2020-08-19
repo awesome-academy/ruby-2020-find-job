@@ -65,7 +65,6 @@ class ProfilesController < ApplicationController
   def correct_user
     @profile = current_user.profiles.find_by id: params[:id]
     
-    flash[:danger] = t "admin.profile.profile_not_found"
     redirect_to root_url unless @profile
   end
 

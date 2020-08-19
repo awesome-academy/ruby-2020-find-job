@@ -77,6 +77,7 @@ en:
       update_fail: "Update info company fail"
       not_found: "Not found"
     search: "Search"
+    reset: "Reset"
   activerecord:
     errors:
       models:
@@ -305,3 +306,4 @@ en:
       x_hours:
         one: " 1 hour"
         other: "%{count} hours"
+  post_found: "Post found"  

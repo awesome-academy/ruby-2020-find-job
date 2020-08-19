@@ -75,6 +75,7 @@ vi:
       update_fail: "Cập nhận thông tin thất bại"
       not_found: "Không tìm thấy công ty"
     search: "Tìm kiếm"
+    reset: "Làm mới"
   static_pages:
     home:
       title: "Trang chủ"
@@ -322,4 +323,4 @@ vi:
       x_hours:
         one: " 1 giờ trước"
         other: "%{count} giờ trước"
-  
+  post_found: "bài viết tìm được"  
