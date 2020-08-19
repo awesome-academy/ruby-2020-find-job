@@ -47,6 +47,7 @@ vi:
       cancel: "Trở lại"
       user_not_found: "Không tìm thấy người dùng!"
       profile_not_found: "Không tìm thấy CV!"
+      add_more: "Thêm"
     apply:
       apply_job: "Ứng tuyển công việc"
       list_candidate: "Danh sách ứng viên"

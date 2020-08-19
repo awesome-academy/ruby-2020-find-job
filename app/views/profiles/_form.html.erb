@@ -1,60 +1,72 @@
 <%= form_for @profile do |f| %>
   <div class="listWrpService featured-wrap candidate candetail">
     <div class="row">
-      <div><%= f.text_field :title, placeholder: t("cv.title"), class: "form-control form-title" %></div>
-      <div class="col-md-2 col-sm-3 col-xs-3">
-        <div class="listImg">
-          <% if @profile.image.blank? %>
-            <%= gravatar_image_tag(current_user.email.gsub("spam", "mdeering"), id: "profile-image") %>
-          <% else %>
-            <%= image_tag @profile.image %>
-          <% end %>
-            <%= f.label :avatar, t("cv.change_avatar"), class: "btn", id: "avatar-upload" %>
-            <%= f.file_field :avatar, accept: Settings.image.accept, class: "hidden" %>
-        </div>
-      </div>
-      <div class="col-md-10 col-sm-9 col-xs-9">
+      <div class="col col-ms-12 col-md-12 col-lg-12">
         <div class="row">
-          <div class="col-md-12">
-            <h3><%= current_user.username %></h3>
-            <div class="designation">
-              <span><i class="fas fa-briefcase"></i></span>
-              <%= f.text_field :position, placeholder: t("cv.position"), class: "form-control" %>
-              <%= errors_for f, :address %>
+          <div class="col col-ms-2 col-md-2 col-lg-3">
+            <%= f.label :title, t("cv.title"), class: "required" %>
+          </div>
+          <div class="col col-ms-10 col-md-10 col-lg-9">
+            <%= f.text_field :title, placeholder: t("cv.title"), class: "form-control", required: :true %>
+          </div>
+        </div>
+        <div class="row mt-10">
+          <div class="col col-ms-3 col-md-3 col-lg-2">
+            <div class="listImg">
+              <% if @profile.image.blank? %>
+                <%= gravatar_image_tag(current_user.email.gsub("spam", "mdeering"), id: "profile-image") %>
+              <% else %>
+                <%= image_tag @profile.image %>
+              <% end %>
+                <%= f.label :avatar, t("cv.change_avatar"), class: "btn", id: "avatar-upload" %>
+                <%= f.file_field :avatar, accept: Settings.image.accept, class: "hidden" %>
             </div>
-            <div>
-              <i class="fas fa-map-marker-alt"></i>
-              <%= f.text_field :address, placeholder: t("cv.place"), class: "form-control" %>
-              <%= errors_for f, :address %>
+          </div>
+          <div class="col col-ms-9 col-md-9 col-lg-10">
+            <div class="row mt-10">
+              <div class="col col-ms-12 col-md-12 col-lg-12">
+                <div class="user-name"><h3><%= current_user.username %></h3></div>
+                  <div class="col col-ms-12 col-md-12 col-lg-12">
+                      <%= f.label :position, t("cv.position"), class: "required" %>
+                      <%= f.text_field :position, placeholder: t("cv.position"), class: "form-control",required: :true %>
+                      <%= errors_for f, :address %>
+                  </div>
+                <div class="col col-ms-12 col-md-12 col-lg-12 mt-10">
+                  <%= f.label :address, t("cv.place"), class: "required" %>
+                  <%= f.text_field :address, placeholder: t("cv.place"), class: "form-control", required: :true %>
+                  <%= errors_for f, :address %>
+                </div>
+                <div class="col col-ms-12 col-md-12 col-lg-12">
+                  <ul class="featureInfo">
+                    <li>
+                      <%= f.label :email, t("cv.email"), class: "required" %>
+                      <%= f.text_field :email, placeholder: t("cv.email"), class: "form-control", required: :true %> 
+                    <%= errors_for f, :email %>
+                    </li>
+                    <li>
+                      <%= f.label :phone, t("cv.phone"), class: "required" %>
+                      <%= f.text_field :phone, placeholder: t("cv.phone"), class: "form-control",required: :true  %> 
+                      <%= errors_for f, :phone %>
+                    </li>
+                  </ul>
+                </div> 
+              </div>
             </div>
-            <ul class="featureInfo">
-              <li>
-                <i class="far fa-envelope"></i>
-                <%= f.text_field :email, placeholder: t("cv.email"), class: "form-control" %> 
-              <%= errors_for f, :email %>
-              </li>
-              <li>
-                <i class="fas fa-phone"></i>
-                <%= f.text_field :phone, placeholder: t("cv.phone"), class: "form-control" %> 
-                <%= errors_for f, :phone %>
-              </li>
-            </ul>  
           </div>
         </div>
       </div>
     </div>
   </div>
   <div class="listWrpService featured-wrap candidate candetail">
-    <h2><%= t "cv.education" %></h2>
+    <h2 class="required"><%= t "cv.education" %></h2>
     <%= f.text_area :education, class: "form-control" %>
   </div>
   <div class="listWrpService featured-wrap candidate candetail">
     <h2><%= t "cv.qualification" %></h2>
+    <div class="qualify">
       <div class="qualifications">
         <%= f.fields_for :qualifications do |qualification| %>
-          <%= render "qualification_fields", f: qualification %>
-          <%= qualification.check_box :_destroy %>
-          <%= qualification.label :_destroy, t("cv.remove") %>
+          <%= render "qualification_fields", f: qualification %>          
         <% end %>
       </div>
       <div class="links">
@@ -62,18 +74,17 @@
                                         data: {
                                             association_insertion_node: ".qualifications",
                                             association_insertion_method: :append,
-                                        } do %>
-          <i class="fas fa-plus text-info"></i>
+                                        }, class: "btn btn-success" do %>
+          <%= t "admin.profile.add_more" %>
         <% end %>
       </div>
+    </div>
   </div>
   <div class="listWrpService featured-wrap candidate candetail">
-    <h2><%= t "cv.experience" %></h2>
+    <h2><%= t "admin.profile.experience" %></h2>
     <div class="experiences">
       <%= f.fields_for :experiences do |experience| %>
         <%= render "experience_fields", f: experience %>
-        <%= experience.check_box :_destroy %>
-        <%= experience.label :_destroy, t("cv.remove") %>
       <% end %>
     </div>
     <div class="links">
@@ -81,8 +92,8 @@
                                         data: {
                                             association_insertion_node: ".experiences",
                                             association_insertion_method: :append,
-                                        } do %>
-          <i class="fas fa-plus text-info"></i>
+                                        }, class: "btn btn-success" do %>
+          <%= t "admin.profile.add_more" %>
         <% end %>
       </div>
   </div>
@@ -91,8 +102,6 @@
     <div class="profile_skills">
       <%= f.fields_for :profile_skills do |profile_skill| %>
         <%= render "profile_skill_fields", f: profile_skill %>
-          <%= profile_skill.check_box :_destroy %>
-          <%= profile_skill.label :_destroy, t("cv.remove") %>
       <% end %>
     </div>
     <div class="links">
@@ -100,8 +109,8 @@
                                         data: {
                                             association_insertion_node: ".profile_skills",
                                             association_insertion_method: :append,
-                                        } do %>
-          <i class="fas fa-plus text-info"></i>
+                                        }, class: "btn btn-success" do %>
+          <%= t "admin.profile.add_more" %>
         <% end %>
       </div>
   </div>

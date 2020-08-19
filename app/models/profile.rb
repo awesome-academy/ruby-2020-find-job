@@ -26,7 +26,7 @@ class Profile < ApplicationRecord
   validates :email, presence: true, format: {with: VALID_EMAIL_REGEX}, length: {maximum: Settings.profile.email_length}
   validates :address, presence: true, length: {maximum: Settings.profile.address_length}
 
-  accepts_nested_attributes_for :qualifications, :experiences, :profile_skills, allow_destroy: true
+  accepts_nested_attributes_for :qualifications, :experiences, :profile_skills, allow_destroy: true, reject_if: :all_blank
   
   def time
     [I18n.l(created_at), I18n.l(updated_at)].join(" - ")

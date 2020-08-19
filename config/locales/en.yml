@@ -49,6 +49,7 @@ en:
       cancel: "Cancel"
       user_not_found: "User not found!"
       profile_not_found: "Profile not found!"
+      add_more: "Add more"
     apply:
       apply_job: "Apply Job"
       list_candidate: "Candidate list"

@@ -40,3 +40,4 @@ notification_per_page: 6
 notification_data: "notification_success"
 date_setting: "%d %b. %Y"
 max_notification: 5
+index_number: 1
