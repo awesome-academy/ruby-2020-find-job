@@ -25,8 +25,8 @@ class ProfilesController < ApplicationController
 
   def create
     @profile = current_user.profiles.build profile_params
-    @profile.image.attach profile_params[:avatar]
     if @profile.save
+      @profile.image.attach profile_params[:avatar]
       flash[:success] = t "notification.create_success"
       redirect_to root_url
     else
@@ -65,7 +65,6 @@ class ProfilesController < ApplicationController
   def correct_user
     @profile = current_user.profiles.find_by id: params[:id]
     
-    flash[:danger] = t "admin.profile.profile_not_found"
     redirect_to root_url unless @profile
   end
 

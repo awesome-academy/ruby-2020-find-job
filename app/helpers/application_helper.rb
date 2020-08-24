@@ -23,4 +23,22 @@ module ApplicationHelper
   def chart_group_by_day_of_month provider 
     provider.group_by_day_of_month(:created_at).count
   end
+
+  def count_not_viewed_notification 
+    count = current_user.notifications.not_view.size
+    return if count.blank?
+    return Settings.max_notification.to_s + "+" if count >= Settings.max_notification
+    count
+  end
+
+  def custom_flash
+    flash_messages = []
+    flash.each do |type, message|
+      type = "success" if type == "notice"
+      type = "error" if type == "danger"
+      text = "<script>toastr.#{type}('#{message}')</script>"
+      flash_messages << text.html_safe if message
+    end
+    flash_messages.join("\n").html_safe
+  end
 end

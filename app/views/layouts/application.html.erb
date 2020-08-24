@@ -15,7 +15,8 @@
 
   <body>
     <%= render "layouts/header" %>
-    <%= render "shared/notice_messages" %>
+    <%= custom_flash %>
+    <%# <%= render "shared/notice_messages" %>
     <%= yield %>
     <%= render "layouts/footer" %>
 

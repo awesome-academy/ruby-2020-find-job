@@ -1,6 +1,6 @@
-import consumer from "./consumer"
+import consumer from './consumer'
 
-consumer.subscriptions.create("NotificationsChannel", {
+consumer.subscriptions.create('NotificationsChannel', {
   connected() {
   },
 
@@ -8,6 +8,8 @@ consumer.subscriptions.create("NotificationsChannel", {
   },
 
   received(data) {
-    $("#notificationList").prepend(data.html);
+    $('#notificationList').prepend(data.html);
+    $('#notification-list-header').prepend(data.html);
+    $('#noti-not-viewed').html(data.count_not_viewes_noti);
   }
 });

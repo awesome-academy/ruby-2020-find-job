@@ -1,13 +1,37 @@
-<div class="nested-fields">
-  <div class="resumeInfo">
-    <%= f.text_field :title, placeholder: t("cv.title"), class: "form-control" %>
-    <%= errors_for f, :title %>
-    <%= f.date_field :start_time, class: "form-control", class: "form-control qualification-time" %> - 
-    <%= f.date_field :end_time, class: "form-control", class: "form-control qualification-time" %>
-    <%= errors_for f, :start_time %>
+<div class="box-item nested-fields">
+  <div class="row">
+    <div class="col col-sm-12 col-md-12 col-lg-12">
+      <span class="total_item">1</span>
+      <div class="close-nested-field"> 
+        <%= link_to_remove_association f, class: "btn-sm btn-danger" do %>
+          <i class="fas fa-times"></i>
+        <% end %>
+      </div>
+    </div>
   </div>
-    <%= f.text_area :content, class: "form-control", class: "form-control" %>
-    <%= link_to_remove_association f do %>
-      <i class="fas fa-minus-circle text-danger"></i>
-    <% end %>
+  <div class="row">
+    <div class="col col-sm-12 col-md-12 col-lg-12">
+      <%= f.label :title, t("cv.title") %>
+      <%= f.text_field :title, placeholder: t("cv.title"), class: "form-control" %>
+      <%= errors_for f, :title %>
+    </div>
+  </div>
+  <div class="row mt-10">
+    <div class="col col-sm-6 col-md-6 col-lg-6">
+      <%= f.label :start_time, t("cv.start_time") %>
+      <%= f.date_field :start_time, class: "form-control" %>
+      <%= errors_for f, :start_time %>
+    </div>
+    <div class="col col-sm-6 col-md-6 col-lg-6 ">
+      <%= f.label :end_time, t("cv.end_time") %>
+      <%= f.date_field :end_time, class: "form-control" %>
+      <%= errors_for f, :end_time %>
+    </div>
+  </div>
+  <div class="row mt-10">
+    <div class="col col-sm-12 col-md-12 col-lg-12">
+      <%= f.label :content, t("cv.content") %>
+      <%= f.text_area :content, class: "form-control" %>
+    </div>
+  </div>
 </div>

@@ -75,6 +75,7 @@ vi:
       update_fail: "Cập nhận thông tin thất bại"
       not_found: "Không tìm thấy công ty"
     search: "Tìm kiếm"
+    reset: "Làm mới"
   static_pages:
     home:
       title: "Trang chủ"
@@ -204,6 +205,8 @@ vi:
     update_success: "Thay đổi đã được cập nhập"
     update_fail: "Thay đổi thất bại"
     notification_success: "CV của bạn đã được chấp nhận bởi"
+    view_all_notification: "xem tất cả"
+    not_viewed: "thông báo bạn chưa xem"
   date:
     order:
       - :day
@@ -255,9 +258,12 @@ vi:
     point: "Điểm"
     applied_post: "Hiện tại bạn chưa nộp cv" 
     title: "Tiêu đề"
-    start_time: "Phải bé hơn thời gian hiện tại"
+    start_time_valid: "Phải bé hơn thời gian hiện tại"
+    start_time: "Thời gian bắt đầu"
+    end_time: "Thời gian kết thúc"
     point_valid: "Điểm phải lớn hơn 0 nhỏ hơn 100"
     cv_approved: "Hồ sơ của bạn đã được chấp thuận bạn không thể hủy bây giờ"
+    content: "Nội dung"
   confirmed: "Bạn chắc chắn chứ?"
   private: "Riêng tư"
   public: "Công khai"
@@ -305,6 +311,12 @@ vi:
   chart: 
     cv_of_month: "Số CV đã thu được trong tháng"
     post_of_month: "Số bài viết được đăng trong tháng"
+    day: "Ngày"
+    posts: "Các bài viết"
+    posts_in_day: "Tổng bài viết trong ngày"
+    no_data: "không có data"
+    profiles_in_day: "Tổng cv đã nộp"
+    profiles: "CV "
   datetime:
     distance_in_words:
       x_days:
@@ -322,4 +334,4 @@ vi:
       x_hours:
         one: " 1 giờ trước"
         other: "%{count} giờ trước"
-  
+  post_found: "bài viết tìm được"  

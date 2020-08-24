@@ -1,1 +1,4 @@
-<%= line_chart chart_group_by_day_of_month(posts) %>
+<%= column_chart chart_group_by_day_of_month(posts),
+                 xtitle: t("chart.day"), ytitle: t("chart.posts"),
+                 label: t("chart.posts_in_day"),
+                 messages: {empty: "chart.no_data"} %>

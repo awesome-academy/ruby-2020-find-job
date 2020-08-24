@@ -1,11 +1,26 @@
-<div class="nested-fields">
-  <div class="head progresshead">
-    <%= f.text_field :name, placeholder: t("cv.title"), class: "form-control" %>
-    <%= errors_for f, :name %>
-    <%= f.number_field :point, placeholder: t("cv.point"), class: "form-control skill_point" %>
-    <%= errors_for f, :point %>
-    <%= link_to_remove_association f do %>
-      <i class="fas fa-minus-circle text-danger"></i>
-    <% end %>
+<div class="box-item nested-fields">
+  <div class="row">
+    <div class="col col-sm-12 col-md-12 col-lg-12">
+      <div class="close-nested-field"> 
+        <span class="total_item">1</span>
+        <%= link_to_remove_association f, class: "btn-sm btn-danger" do %>
+          <i class="fas fa-times"></i>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col col-sm-12 col-md-12 col-lg-12">
+      <%= f.label :name, t("cv.title") %>
+      <%= f.text_field :name, placeholder: t("cv.title"), class: "form-control" %>
+
+      <%= errors_for f, :name %>
+    </div>
+  </div>
+  <div class="row mt-10">
+    <div class="col col-sm-12 col-md-12 col-lg-12">
+      <%= f.number_field :point, placeholder: t("cv.point"), class: "form-control skill_point" %>
+      <%= errors_for f, :point %>
+    </div>
   </div>
 </div>

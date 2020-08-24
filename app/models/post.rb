@@ -5,6 +5,7 @@ class Post < ApplicationRecord
   belongs_to :user
   has_many :skills, as: :skillable, dependent: :destroy
   has_many :user_applies, dependent: :destroy
+  has_many :notifications, dependent: :destroy
 
   delegate :title, to: :category, prefix: true
   delegate :company_logo, :company_name, to: :user
