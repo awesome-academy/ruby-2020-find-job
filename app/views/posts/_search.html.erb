@@ -15,8 +15,11 @@
         <%= text_field_tag :salary_gteq, params[:salary_gteq], class: "form-control", placeholder: t("admin.post.salary_min") %>
       </div>
     </div>
-    <div class="col-md-2">
-    <%= submit_tag "tim kiem", type: :submit, class: "search" %>
+    <div class="col-md-2 al-r">
+      <%= submit_tag(t("admin.reset"), { name: "reset", id: "reset", type: "reset", class: "btn btn-default mt-10"}) %> 
+    </div>
+    <div class="col-md-2 al-l">
+      <%= submit_tag t("admin.search"), type: :submit, class: "search" %>
     </div>
   </div>
 <% end %>

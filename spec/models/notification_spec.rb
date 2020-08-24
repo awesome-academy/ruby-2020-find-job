@@ -9,4 +9,8 @@ RSpec.describe Notification, type: :model do
   describe "Validation" do
     it {is_expected.to be_valid}
   end
+
+  describe ".not_view_notifications" do
+    it { expect(current_user.notifications.not_view_notifications).to eq(current_user.notifications.where notifications:{viewed: false}) } 
+  end
 end

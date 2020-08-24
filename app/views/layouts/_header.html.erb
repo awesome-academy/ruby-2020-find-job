@@ -47,6 +47,7 @@
                 </li>
                 <li class="dropdown">
                   <%= link_to notifications_path do %>
+                    <span id="noti-not-viewed"><%= count_not_viewed_notification %></span>
                     <i class="fa fa-bell" aria-hidden="true"></i>
                   <% end %>
                 </li>
