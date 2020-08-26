@@ -2,7 +2,7 @@
   <div class="heading-title"><%= t "list_all_job_html" %></div>
   <div class="container">
     <%= render "posts/search" %>
-    <div><%= @search.size %> <%= t "post_found" %></div>
+    <div><%= @feed_items.total_count %> <%= t "post_found" %></div>
     <% if @feed_items.any? %>
       <ol class="row">
         <%= render @feed_items %>

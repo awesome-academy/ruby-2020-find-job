@@ -9,6 +9,7 @@ consumer.subscriptions.create('NotificationsChannel', {
 
   received(data) {
     $('#notificationList').prepend(data.html);
-    $('#noti-not-viewed').html(data.count_not_viewes_noti)
+    $('#notification-list-header').prepend(data.html);
+    $('#noti-not-viewed').html(data.count_not_viewes_noti);
   }
 });

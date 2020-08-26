@@ -1,1 +1,4 @@
-<%= column_chart chart_group_by_day_of_month(profile_applies) %>
+<%= column_chart chart_group_by_day_of_month(profile_applies),
+                 xtitle: t("chart.day"), ytitle: t("chart.profiles"),
+                 label: t("chart.profiles_in_day"),
+                 messages: {empty: "chart.no_data"} %>

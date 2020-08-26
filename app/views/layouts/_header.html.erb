@@ -45,11 +45,21 @@
                       </li>
                     </ul>
                 </li>
-                <li class="dropdown">
-                  <%= link_to notifications_path do %>
+                <li class="dropdown notifi">
+                  <a href="#" class="" data-toggle="dropdown">
                     <span id="noti-not-viewed"><%= count_not_viewed_notification %></span>
                     <i class="fa fa-bell" aria-hidden="true"></i>
-                  <% end %>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-right" id="notification-list-header"> 
+                    <div id="my-notifi">
+                      <% if current_user.notifications.any? %>
+                        <%= render partial: "shared/notification", collection: sort_notification(current_user), as: :notification %>
+                      <% end %>
+                    </div>
+                    <div class="view-all">
+                      <%= link_to t("notification.view_all_notification"), notifications_path %>
+                    </div>
+                  </ul>
                 </li>
               </ul>  
             <% else %>

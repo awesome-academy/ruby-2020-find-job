@@ -4,13 +4,18 @@
       <div class="col-md-12 col-sm-12">
         <ul class="notificator">
           <div class="notification-container">
-            <div class="notification-title"><%= t "notification.title" %></div>
+            <div class="notification-title">
+              <%= t "notification.title" %>
+              <span>
+                (<%= @notifications.not_view.size %> <%= t "notification.not_viewed" %>)
+              </span>
+            </div>
             <div class="notifications">
               <% if @notifications.any? %>      
                 <ul id="notificationList">
-                  <%= render @notifications %>
-                </ul>
+                  <%= render partial: "shared/notification", collection: @notifications, as: :notification %>
                 <%= paginate @notifications %>
+                </ul>
               <% end %>
             </div>
           </div>

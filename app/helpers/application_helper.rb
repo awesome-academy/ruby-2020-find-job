@@ -30,4 +30,8 @@ module ApplicationHelper
     return Settings.max_notification.to_s + "+" if count >= Settings.max_notification
     count
   end
+
+  def sort_notification current_user
+    current_user.notifications.by_created_at
+  end
 end
