@@ -45,4 +45,18 @@ module ApplicationHelper
     end
     flash_messages.join("\n").html_safe
   end
+
+  def post_comment_url post, comment
+    return post_comment_path post_id: post.id, id: comment.id if comment.id.present?
+
+    post_comments_path post_id: post.id
+  end
+
+  def delete_comment_url post, comment
+    post.id.to_s+"/comments/"+comment.id.to_s
+  end
+  
+  def current_user? user
+    user == current_user
+  end
 end

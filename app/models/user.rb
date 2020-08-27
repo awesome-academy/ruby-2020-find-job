@@ -11,6 +11,7 @@ class User < ApplicationRecord
   has_many :sender, foreign_key: :creator_id, dependent: :destroy
   has_many :views, dependent: :destroy
   has_many :user_applies
+  has_many :comments, dependent: :destroy
 
   delegate :name, :logo, to: :company, prefix: true
 

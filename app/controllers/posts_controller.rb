@@ -1,7 +1,9 @@
 class PostsController < ApplicationController
   before_action :load_post, only: :show 
  
-  def show; end
+  def show
+    @comment = Post.find_by(id: params[:id]).comments.build
+  end
 
   private
 
