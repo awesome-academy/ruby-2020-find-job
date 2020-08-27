@@ -1,4 +1,5 @@
 @import 'colors';
+@import 'toastr/toastr';
 
 body {
   font-size: 18px !important;
@@ -213,4 +214,41 @@ input.search {
 
 .viewed-true {
   background-color: transparent;
+}
+.box-item {
+  padding: 10px;
+  border: 1px solid lightblue;
+  margin: 20px 0;
+  border-radius: 9px;
+  background-color: $gray-e0;
+}
+
+.close-nested-field {
+  text-align: right;
+}
+
+textarea{
+  margin: unset;
+}
+
+.user-name{
+  text-align: center;
+}
+
+label {
+  margin-top: 10px
+}
+
+.required:after {
+  content:" *";
+  color: red;
+}
+
+span.total_item {
+  float: left;
+  font-weight: 700;
+
+  &::before{
+    content: '#';
+  }
 }

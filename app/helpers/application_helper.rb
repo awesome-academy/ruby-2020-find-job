@@ -34,4 +34,15 @@ module ApplicationHelper
   def sort_notification current_user
     current_user.notifications.by_created_at
   end
+
+  def custom_flash
+    flash_messages = []
+    flash.each do |type, message|
+      type = "success" if type == "notice"
+      type = "error" if type == "danger"
+      text = "<script>toastr.#{type}('#{message}')</script>"
+      flash_messages << text.html_safe if message
+    end
+    flash_messages.join("\n").html_safe
+  end
 end
