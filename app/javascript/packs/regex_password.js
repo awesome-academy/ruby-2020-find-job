@@ -1,4 +1,4 @@
-$(function() {
+export function passwordRegex() {
   $('#dmm').click(function(e) {
     password = $("#reset-pw").val();
     password_regex = /^(?=.*[a-zA-Z])(?=.*[0-9])/i;
@@ -10,5 +10,5 @@ $(function() {
     }
 
     e.preventDefault();   
-  })
-})
+  }) 
+}

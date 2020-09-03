@@ -1,11 +1,12 @@
-<div class="inner-content loginWrp listing detail">
+
+<div class="inner-content loginWrp detail">
   <div class="container">     
     <div class="inner-wrap">
       <div class="row">
-        <div class="col-md-8">
+        <div class="col col-md-8">
           <div class="listWrpService jobdetail">
             <div class="row">
-              <div class="col-md-3 col-sm-3 col-xs-3">
+              <div class="col col-md-3 col-sm-3 col-xs-3">
                 <div class="listImg"><%= image_tag @post.company_logo %></div>
               </div>
               <div class="col-md-9 col-sm-9 col-xs-9">
@@ -27,6 +28,48 @@
                 <%= render @post.skills %>
               </ul>
             <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col col-md-8">
+          <% if user_signed_in? %>
+            <div class="row comments">
+              <div class="col col-ms-12 col-md-12 col-lg-12">
+                <div class="row">
+                  <div class="col col-ms-2 col-md-2 col-lg-3 avatar">
+                    <%= image_tag current_user.avatar %>
+                  </div>
+                  <div class="col col-ms-10 col-md-10 col-lg-9">
+                    <div class="row">
+                      <div class="col col-ms-12 col-md-12 col-lg-12">
+                        <div class="float-left">
+                          <span class="user-name"><%= current_user.username %></span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row comment-body">
+                      <div class="col col-ms-12 col-md-12 col-lg-12" id="comment-form">
+                        <%= render "comments/form_comment" %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% else %>
+            <%= link_to t("comment.login"), new_user_session_path(post_id: @post.id ) %>
+          <% end %>
+          <div class="row">
+            <div class="col col-ms-12 col-md-12 col-lg-12">
+              <% if @post.comments.any? %>
+                <ul id="listComment">
+                  <%= render partial: "comments/comment", collection: @post.comments.by_created_at, as: :comment %>
+                </ul>
+              <% else %>
+                <h2><%= t "comment.comment_di" %></h2>
+              <% end %>
+            </div>
           </div>
         </div>
       </div>

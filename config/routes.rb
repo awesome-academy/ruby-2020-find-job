@@ -9,11 +9,11 @@ Rails.application.routes.draw do
                           registrations: "users/registrations"}
 
     root "static_pages#home"
-    resources :posts, only: :show
     resources :user_applies, only: %i(create destroy)
     resources :password_resets, except: %i(destroy show index)
     resources :notifications, only: %i(index update)
     resources :searches, only: :index
+  
     resources :users do
       member do
         get "/job_applieds", to: "job_applieds#index"
@@ -22,7 +22,15 @@ Rails.application.routes.draw do
         end
       end
     end
-
+  
+    resources :posts, only: :show do
+      resources :comments, except: %i(index show)
+    end
+  
+    resources :comments, except: %i(index show) do
+      resources :comments, except: %i(index show)
+    end
+  
     namespace :admin do 
       root to: "admins#index"
 

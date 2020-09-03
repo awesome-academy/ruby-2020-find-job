@@ -281,14 +281,14 @@ vi:
   enums:
     userapply:
       status:
-        pending: Đang duyệt
-        approved: Được chấp thuận
+        pending: "Đang duyệt"
+        approved: "Được chấp thuận"
         cancel: "Hủy"
     post:
       target_type: 
-        freelance: Tự do
-        parttime: Bán thời gian
-        fulltime: Toàn thời gian
+        freelance: "Tự do"
+        parttime: "Bán thời gian"
+        fulltime: "Toàn thời gian"
   email:
     hi: "Xin chào"
     subject: "Thông báo ứng viên"
@@ -333,3 +333,14 @@ vi:
         one: " 1 giờ trước"
         other: "%{count} giờ trước"
   post_found: "bài viết tìm được"  
+  comment:
+    comment: "Bình luận"
+    comment_exist: "Comment không tồn tại"
+    commented: "Bạn đã comment"
+    error: "Lỗi"
+    comment_di: "Hãy là người đầu tiên comment cho post này"
+    check: "Bạn có chắc chắn muốn xóa không"
+    login: "bạn phải đăng nhập để bình luận"
+    create: "Comment thành công"
+    update: "Chỉnh sửa comment thành công"
+    destroy: "Xóa comment thành công"

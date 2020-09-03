@@ -62,7 +62,7 @@ ul.featureInfo {
 .loginWrp {
   background: #f3f2f2;
   display: block;
-  height: 95vh;
+  min-height: 95vh;
 }
 
 input {
@@ -227,11 +227,11 @@ input.search {
   text-align: right;
 }
 
-textarea{
+textarea {
   margin: unset;
 }
 
-.user-name{
+.user-name {
   text-align: center;
 }
 
@@ -250,5 +250,58 @@ span.total_item {
 
   &::before{
     content: '#';
+  }
+}
+
+.comments {
+  .avatar {
+    text-align: center;
+
+    img {
+      width: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+
+  .float-right {
+    float: right;
+  }
+
+  .float-left {
+    float: left;
+  }
+
+  .user-name {
+    text-align: center;
+    font-weight: 600;
+  }
+
+  span.time-comment {
+    font-size: 13px;
+    font-style: italic;
+  }
+
+  .comment-body {
+    background-color: #d2d2d2;
+    border-radius: 25px;
+    padding: 10px 15px;
+    max-height: 300px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    word-break: break-word;
+  }
+
+  .form-group {
+    width: 100%;
+  }
+
+  textarea#comment_content {
+    border-radius: 10px !important;
+    margin-top: 6px;
+  }
+
+  input.btn.btn-primary.send {
+    display: none;
   }
 }

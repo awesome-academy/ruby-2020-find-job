@@ -1,0 +1,7 @@
+<% if @msg.present? %>
+ $('#listComment').html('<%= j render partial: "comments/comment", collection: @comments, as: :comment %>');
+  $('#new_comment').find("textarea").val("");
+  toastr.success('<%= @msg %>');  
+<% else %>
+  toastr.error('<%= t "comment.error" %>')
+<% end %>
