@@ -22,7 +22,7 @@ global.toastr = require('toastr')
 
 import { showPreviewImage } from './show_image';
 import { passwordRegex } from './regex_password';
-import { enterComment } from './enter_comment';
+import { enterComment, showMessageCancel,escapeEditComment } from './enter_comment';
 import { countAssociation } from './count_association';
 
 $(document).on('turbolinks:load', function () {
@@ -30,6 +30,8 @@ $(document).on('turbolinks:load', function () {
   passwordRegex()
   enterComment()
   countAssociation()
+  showMessageCancel()
+  escapeEditComment()
 })
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)

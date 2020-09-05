@@ -15,10 +15,10 @@
               <div class="float-right"> 
                 <span class="action-comment">
                   <% if current_user? comment.user %>
-                    <%= link_to edit_post_comment_path(post_id: @post.id, id: comment.id), remote: true do %>
+                    <%= link_to edit_post_comment_path(post_id: @post.id, id: comment.id), class: "edit-comment",data: {toggle: "tooltip"}, title: t("comment.edit"),remote: true do %>
                       <i class="fas fa-edit"></i>
                     <% end %>
-                    <%= link_to delete_comment_url(@post, comment), method: :delete, data:{confirm: t("comment.check")}, class: " alert-danger", remote: true do %>
+                    <%= link_to delete_comment_url(@post, comment), method: :delete, data:{toggle: "tooltip", confirm: t("comment.check")}, title: t("comment.delete"), class: " alert-danger", remote: true do %>
                       <i class="fas fa-trash"></i>
                     <% end%>
                   <% end%>
@@ -28,8 +28,16 @@
           </div>
           <div class="row">
             <div class="col col-ms-12 col-md-12 col-lg-12">
-              <div class="comment-body" id="comment-<%= comment.id %>">
-                <%= comment.content %>
+              <div class="comment-body">
+                <div id="form-comment-<%= comment.id %>">
+                  
+                </div>
+                <p class="comment-content">
+                  <%= comment.content %>
+                </p>
+                <div class="cancel-comment">
+                  <%= t "comment.cancel_comment" %>
+                </div>
               </div>
             </div>
           </div>

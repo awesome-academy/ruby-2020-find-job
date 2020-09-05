@@ -296,12 +296,18 @@ span.total_item {
     width: 100%;
   }
 
-  textarea#comment_content {
+  textarea .comment_content {
     border-radius: 10px !important;
     margin-top: 6px;
   }
-
-  input.btn.btn-primary.send {
+  
+  .send {
     display: none;
+  }
+
+  .cancel-comment {
+    display: none;
+    font-size: 13px;
+    font-style: italic;
   }
 }

@@ -325,3 +325,7 @@ en:
     create: "Created comment"
     update: "Updated comment"
     destroy: "Destroy comment"
+    cancel_comment: "You can press ESC to cancel"
+    cancel: "Cancel"
+    edit: "Edit comemnt"
+    delete: "Delete comemnt"
