@@ -1,5 +1,5 @@
 <%= form_for [@post, @comment], url: post_comment_url(@post, @comment), remote: true do |f| %>
-    <%= f.text_area :content, class: "form-control" %>
-    <%= f.submit t("comment.comment"), class: "btn btn-primary send" %>
-    <%= errors_for f, :content %> 
+  <%= f.text_area :content, class: "form-control comment_content" %>
+    <%= f.submit t("comment.comment"), class: "send" %>
+  <%= errors_for f, :content %> 
 <% end %>

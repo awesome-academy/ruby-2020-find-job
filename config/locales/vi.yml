@@ -344,3 +344,7 @@ vi:
     create: "Comment thành công"
     update: "Chỉnh sửa comment thành công"
     destroy: "Xóa comment thành công"
+    cancel_comment: "Bạn có thể nhấn ESC để hủy"
+    cancel: "hủy"
+    edit: "Chỉnh sửa comemnt"
+    delete: "Xóa comemnt"
