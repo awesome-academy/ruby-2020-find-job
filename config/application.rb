@@ -13,5 +13,12 @@ module Ruby2020FindJob
     config.active_job.queue_adapter = :sidekiq
     config.session_store :active_record_store,
       :key => "_redmine_session"
+    
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins "*"
+        resource "*", headers: :any, methods: %i(get post put patch delete options)
+      end
+    end
   end
 end
