@@ -38,6 +38,9 @@ gem "devise-async"
 gem "paranoia"
 gem "chartkick"
 gem "groupdate"
+gem "grape"
+gem "grape-jwt-authentication"
+gem "rack-cors"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
